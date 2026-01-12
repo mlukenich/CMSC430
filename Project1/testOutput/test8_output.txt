@@ -1,0 +1,54 @@
+
+   1  -- Punctuation symbols
+   2  
+   3  ,:;() =>
+   4  
+   5  // Valid identifiers
+   6  
+   7  name_1
+   8  name_1__a2_ab3
+   9  
+  10  // Invalid identifiers
+  11  
+  12  name___2
+Lexical Error, Invalid Character _
+Lexical Error, Invalid Character _
+Lexical Error, Invalid Character _
+  13  _name3
+Lexical Error, Invalid Character _
+  14  name4_
+Lexical Error, Invalid Character _
+  15  
+  16  // Integer Literals
+  17  
+  18  23 #3aD
+  19  
+  20  // Real Literals
+  21  
+  22  123.45 .123 1.2E2 .1e+2 1.2E-2
+  23  
+  24  // Character Literals
+  25  
+  26  'A' '\n'
+  27  
+  28  // Logical operators
+  29  
+  30  & | !
+  31  
+  32  // Relational operators
+  33  
+  34  = <> > >= < <=
+  35  
+  36  // Arithmetic operators
+  37  
+  38  + - * / % ^ ~
+  39  
+  40  // Reserved words
+  41  
+  42  begin case character else elsif end endcase endfold endif endswitch 
+  43  fold function if integer is left list of others real returns right
+  44  switch then when
+  45       
+Lexical Errors 5
+Syntax Errors 0
+Semantic Errors 0

@@ -100,3 +100,26 @@ when        { ECHO; return(WHEN); }
 .           { ECHO; appendError(LEXICAL, yytext); }
 
 %%
+
+int main()
+{
+	int token;
+
+	// Initialize the listing generator
+	firstLine();
+
+	// Open the output file for lexemes
+	FILE *file = fopen("lexemes.txt", "w"); 
+
+	// Loop until the scanner returns 0 (End Of File)
+	while (token = yylex())
+	{
+		// Write the token code and the lexeme string to the file
+		fprintf(file, "%d %s\n", token, yytext);
+	}
+
+	// Finalize the listing and close the file
+	lastLine();
+	fclose(file);
+	return 0;
+}

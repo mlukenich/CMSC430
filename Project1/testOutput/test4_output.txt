@@ -1,0 +1,21 @@
+
+   1  // Function with All Reserved Words
+   2  
+   3  function main returns character;
+   4      number: real is when 2 < 3, 0 : 1;
+   5      values: list of integer is (4, 5, 6);
+   6  begin
+   7      if number < 6.3 then
+   8          fold left + (1, 2, 3) endfold;
+   9      elsif 6 < 7 then
+  10          fold right + values endfold;
+  11      else
+  12          switch a is
+  13              case 1 => number + 2;
+  14              case 2 => number * 3;
+  15              others => number;  
+  16          endswitch;
+  17      endif;    
+  18  end;
+  19       
+Compiled Successfully

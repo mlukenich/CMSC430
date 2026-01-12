@@ -1,0 +1,9 @@
+
+   1  // Function with Arithmetic Expression
+   2  
+   3  function main returns integer;
+   4  begin
+   5      7 + 2 * (5  + 4);
+   6  end;
+   7       
+Compiled Successfully

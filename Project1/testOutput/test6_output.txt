@@ -1,0 +1,20 @@
+
+   1  // Program Containing the New Comment, Modified Identifier 
+   2  //     and Real Literal and Hex and Character Literals
+   3  
+   4  -- This is the new style comment
+   5  
+   6  function main b: integer, c: integer returns integer;
+   7       a: real is .3;
+   8       d: real is 5.7;
+   9       a__1: real is .4e2;
+  10       ab_c_d: real is 4.3E+1;
+  11       ab1_cd2: real is 4.5e-1;
+  12       hex: integer is #2aF;
+  13       char1: character is 'C';
+  14       char2: character is '\n';
+  15  begin
+  16       hex + 2;
+  17  end;
+  18       
+Compiled Successfully
