@@ -1,9 +1,10 @@
 // CMSC 430 Compiler Theory and Design
-// Project 1 Skeleton
+// Project 1 - Lexical Analyzer
+// Author: Matthew Lukenich
+// Class: CMSC430
 // UMGC CITE
-// Summer 2023
-
-// This file contains the enumerated type definition for tokens
+//
+// Token definitions for the lexical analyzer
 
 enum Tokens {
     ADDOP = 256, MULOP, ANDOP, RELOP, ARROW, 

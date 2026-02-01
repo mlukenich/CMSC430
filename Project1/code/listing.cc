@@ -1,10 +1,11 @@
 // CMSC 430 Compiler Theory and Design
-// Project 1 Skeleton
+// Project 1 - Lexical Analyzer
+// Author: Matthew Lukenich
+// Class: CMSC430
 // UMGC CITE
-// Summer 2023
-
-// This file contains the bodies of the functions that produces the 
-// compilation listing
+//
+// This file contains the bodies of the functions that produce the 
+// compilation listing with line numbers and error reporting.
 
 #include <cstdio>
 #include <string>
@@ -21,12 +22,14 @@ static int semanticErrors = 0;
 
 static void displayErrors();
 
+// Initializes the listing by printing the first line number
 void firstLine()
 {
     lineNumber = 1;
     printf("\n%4d  ",lineNumber);
 }
 
+// Displays any errors for the current line and advances to the next line
 void nextLine()
 {
     displayErrors();
@@ -34,6 +37,7 @@ void nextLine()
     printf("%4d  ",lineNumber);
 }
 
+// Finalizes the listing and prints error summary or success message
 int lastLine()
 {
     printf("\r");
@@ -56,6 +60,7 @@ int lastLine()
     return totalErrors;
 }
     
+// Appends an error message to the buffer and increments the appropriate counter
 void appendError(ErrorCategories errorCategory, string message)
 {
     string messages[] = { "Lexical Error, Invalid Character ", "",
@@ -79,6 +84,7 @@ void appendError(ErrorCategories errorCategory, string message)
     }
 }
 
+// Outputs buffered errors and clears the buffer
 void displayErrors()
 {
     if (errorBuffer != "")

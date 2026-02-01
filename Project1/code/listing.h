@@ -1,10 +1,10 @@
 // CMSC 430 Compiler Theory and Design
-// Project 1 Skeleton
+// Project 1 - Lexical Analyzer
+// Author: Matthew Lukenich
+// Class: CMSC430
 // UMGC CITE
-// Summer 2023
-
-// This file contains the function prototypes for the functions that produce
-// the compilation listing
+//
+// Function prototypes for the compilation listing module
 
 enum ErrorCategories {LEXICAL, SYNTAX, GENERAL_SEMANTIC, DUPLICATE_IDENTIFIER,
     UNDECLARED};
