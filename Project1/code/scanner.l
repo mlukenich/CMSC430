@@ -29,14 +29,11 @@ id          [A-Za-z]([A-Za-z0-9]|_[A-Za-z0-9]|__[A-Za-z0-9])*
 digit       [0-9]
 dec         {digit}+
 hex         #[0-9a-fA-F]+
-/* Real Literal: 
-   1. defined integer part + dot + optional fraction + optional exponent
-   2. dot + fraction + optional exponent
-   3. defined integer + exponent (no dot) 
-*/
-real        ({digit}+\.{digit}*|\.{digit}+)([eE][+-]?{digit}+)?|{digit}+[eE][+-]?{digit}+
-/* Char Literal: 'c', '\n', '\t', etc. */
-char        '([^'\\\n]|\\.)'
+/* Real literal: zero or more digits, decimal point, one or more digits,
+   optionally followed by exponent (e|E, optional sign, digits). */
+reallit     ({digit}*\.{digit}+)([eE][+-]?{digit}+)?
+/* Character literal: single character or approved escape sequence. */
+char        '([^'\\\n]|\\[btnrf\\"'])'
 punc        [\(\),:;]
 
 %%
@@ -94,7 +91,7 @@ when        { ECHO; return(WHEN); }
 {id}        { ECHO; return(IDENTIFIER); }
 {hex}       { ECHO; return(INT_LITERAL); }
 {dec}       { ECHO; return(INT_LITERAL); }
-{real}      { ECHO; return(REAL_LITERAL); }
+{reallit}   { ECHO; return(REAL_LITERAL); }
 {char}      { ECHO; return(CHAR_LITERAL); }
 {punc}      { ECHO; return(yytext[0]); }
 
